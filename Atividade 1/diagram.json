@@ -1,71 +1,70 @@
-#include <stdio.h>
-#include "pico/stdlib.h"
-#include "hardware/pwm.h"
-#include "hardware/irq.h"
-
-// Definicoes dos pinos para os LEDs RGB da placa BitDogLab
-#define LED_RED   12  // Pino do LED vermelho
-#define LED_BLUE  13  // Pino do LED azul
-
-// Parametros do PWM
-#define RED_PWM_FREQ 1000    // Frequencia de 1 kHz para o LED vermelho
-#define BLUE_PWM_FREQ 10000  // Frequencia de 10 kHz para o LED azul
-#define DUTY_STEP 5          // Passo de incremento do duty cycle (5%)
-#define DUTY_MIN 5           // Duty cycle minimo (5%)
-#define DUTY_MAX 100         // Duty cycle maximo (100%)
-
-volatile uint16_t duty_cycle = DUTY_MIN; // Duty cycle inicial do LED vermelho
-
-// Calcula o valor do contador para a frequencia desejada
-uint16_t calculate_wrap(uint32_t freq) {
-    return (uint16_t)(125000000 / (freq * 16)) - 1; // Baseado no clock de 125 MHz
-}
-
-// Interrupcao do timer para atualizar o duty cycle do LED vermelho
-bool timer_callback(repeating_timer_t *rt) {
-    static bool increasing = true; // Controle da direcao do duty cycle
-
-    // Atualiza o duty cycle
-    if (increasing) {
-        duty_cycle += DUTY_STEP;
-        if (duty_cycle >= DUTY_MAX) increasing = false;
-    } else {
-        duty_cycle = DUTY_MIN;
-        increasing = true;
+{
+  "version": 1,
+  "author": "Giovanna Perovano",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -22.8,
+      "left": -140.2,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -22.8,
+      "left": -44.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -22.8,
+      "left": -92.2,
+      "attrs": { "color": "yellow"}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 128.75,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 138.35,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 147.95,
+      "left": -105.6,
+      "attrs": { "value": "330" }
     }
-
-    // Atualiza o PWM do LED vermelho
-    uint slice = pwm_gpio_to_slice_num(LED_RED);
-    uint16_t wrap = pwm_get_wrap(slice);
-    pwm_set_gpio_level(LED_RED, (duty_cycle * (wrap + 1)) / 100);
-    return true; // Continua o timer repetidamente
-}
-
-// Configura o PWM para um LED especifico
-void setup_pwm(uint gpio, uint32_t freq, uint16_t duty) {
-    gpio_set_function(gpio, GPIO_FUNC_PWM);               // Configura o pino para funcao PWM
-    uint slice = pwm_gpio_to_slice_num(gpio);             // Obtém o slice do PWM associado ao pino
-    uint16_t wrap = calculate_wrap(freq);                 // Calcula o valor do contador
-
-    pwm_set_wrap(slice, wrap);                            // Configura o periodo do PWM
-    pwm_set_clkdiv(slice, 16.0);                          // Define o divisor do clock
-    pwm_set_gpio_level(gpio, (duty * (wrap + 1)) / 100);  // Define o duty cycle inicial
-    pwm_set_enabled(slice, true);                         // Habilita o PWM no slice
-}
-
-int main() {
-    stdio_init_all();
-
-    // Configura o PWM para os LEDs vermelho e azul
-    setup_pwm(LED_RED, RED_PWM_FREQ, duty_cycle);
-    setup_pwm(LED_BLUE, BLUE_PWM_FREQ, 50); // LED azul com 50% de duty cycle inicial
-
-    // Configura um timer repetitivo para atualizar o duty cycle do LED vermelho a cada 2 segundos
-    repeating_timer_t timer;
-    add_repeating_timer_ms(2000, timer_callback, NULL, &timer);
-
-    // Loop principal (o controle do LED vermelho ocorre via interrupcao do timer)
-    while (true) {
-        tight_loop_contents(); // Mantem o microcontrolador em modo de espera
-    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GND.1", "led1:C", "black", [ "h-130.85", "v6.35" ] ],
+    [ "r1:2", "pico:GP11", "red", [ "v0", "h37.2", "v9.6" ] ],
+    [ "r2:2", "pico:GP12", "yellow", [ "v0", "h27.6", "v9.6" ] ],
+    [ "r3:2", "pico:GP13", "green", [ "v0", "h18", "v19.2" ] ],
+    [ "r3:1", "led1:A", "green", [ "v0", "h-28.8", "v-105.6", "h19.2" ] ],
+    [ "r2:1", "led3:A", "yellow", [ "v0", "h-19.2", "v-76.8", "h57.6" ] ],
+    [ "r1:1", "led2:A", "red", [ "v0", "h-9.6", "v-57.6", "h86.4" ] ],
+    [ "pico:GND.1", "led3:C", "black", [ "h-82.85", "v-3.25" ] ],
+    [ "pico:GND.1", "led2:C", "black", [ "h-34.85", "v-3.25" ] ]
+  ],
+  "dependencies": {}
 }
