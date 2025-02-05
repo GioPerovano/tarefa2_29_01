@@ -69,7 +69,7 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 
 ### 📂 Estrutura do Repositório
 ```plaintext
-📦 Atividades
+📦 Atividades                  # Diretório principal com todos os arquivos da tarefa
  ┣ 📂 Atividade 1              # Pasta com os arquivos da Atividade 1 (Semáforo)
  ┣  ┣ 📜 main.c                # Código da Atividade 1 (Semáforo)
  ┣  ┣ 📜 diagram.json          # Diagrama do Wokwi da Atividade 1 (Semáforo)
