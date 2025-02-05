@@ -90,11 +90,12 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 - Instale o **CMake**, **Make** e um compilador **C/C++** compatível (como **GCC para ARM**).
 - Se ainda não tiver, instale o **VS Code** com as extensões recomendadas para desenvolvimento com o Pico e o Wokwi.
 
-**2️⃣ Clone este repositório**
+**2️⃣ Clone este repositório e entre na pasta da atividade desejada**
 
 ```bash
-git clone https://github.com/seu-usuario/projeto-temporizadores-pico.git
-cd projeto-temporizadores-pico
+git clone https://github.com/GioPerovano/tarefa2_29_01
+cd Atividade 1
+cd Atividade 2
 ```
 
 **3️⃣ Configure o ambiente**
@@ -117,7 +118,7 @@ make
 3. O microcontrolador será reiniciado automaticamente.
 
 **6️⃣ Simule no Wokwi (opcional)**
-1. Abra o ([Wokwi](https://wokwi.com/)) no navegador.
+1. Abra o [Wokwi](https://wokwi.com/) no navegador.
 2. Importe o arquivo diagram.json correspondente à atividade.
 3. Execute a simulação para testar o comportamento do código.
 
