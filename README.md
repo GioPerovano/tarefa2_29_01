@@ -84,13 +84,13 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 
 ## 🚀 Como Executar o Projeto
 
-** 1️⃣ Instale as dependências necessárias**
+**1️⃣ Instale as dependências necessárias**
 
 - Baixe e instale o **Pico SDK** seguindo a [documentação oficial](https://github.com/raspberrypi/pico-sdk).
 - Instale o **CMake**, **Make** e um compilador **C/C++** compatível (como **GCC para ARM**).
 - Se ainda não tiver, instale o **VS Code** com as extensões recomendadas para desenvolvimento com o Pico e o Wokwi.
 
-** 2️⃣ Clone este repositório**
+**2️⃣ Clone este repositório**
 
 ```bash
 git clone https://github.com/seu-usuario/projeto-temporizadores-pico.git
@@ -116,6 +116,12 @@ make
 2. Copie o arquivo .uf2 gerado na pasta build para a unidade do Pico.
 3. O microcontrolador será reiniciado automaticamente.
 
+**6️⃣ Simule no Wokwi (opcional)**
+1. Abra o ([Wokwi](https://wokwi.com/)) no navegador.
+2. Importe o arquivo diagram.json correspondente à atividade.
+3. Execute a simulação para testar o comportamento do código.
+
+
 
 ## 📢 Observações
 - Consulte os materiais associados a cada atividade nos links disponíveis abaixo:
@@ -123,5 +129,5 @@ make
 2. https://www.dropbox.com/scl/fi/7faa7ib6bjrxncr2dxnf7/2025-01-26-14-01-54.mkv?rlkey=wqvef7zpxpuwvz2joj6qucasd&dl=0
    
 
-##🛠️ Bons estudos e boa programação! 🚀
+## 🛠️ Bons estudos e boa programação! 🚀
 
