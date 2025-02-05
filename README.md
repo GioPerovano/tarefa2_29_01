@@ -84,25 +84,38 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 
 ## 🚀 Como Executar o Projeto
 
-1. **Adicione e certifique-se de ter as dependências e bibliotecas necessárias já instaladas e configuradas.**
-2. **Clone este repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/projeto-temporizadores-pico.git
-   ```
-3. **Entre na pasta do projeto:**
-   ```bash
-   cd projeto-temporizadores-pico
-   ```
-3. **Compile o código utilizando o Pico SDK:**
-   ```bash
-   mkdir build && cd build
-   cmake ..
-   make
-   ```
-4. **Carregue o código no Raspberry Pi Pico W.**
-5. **Simule o funcionamento no Wokwi ou execute diretamente no hardware.**
+** 1️⃣ Instale as dependências necessárias**
 
----
+- Baixe e instale o **Pico SDK** seguindo a [documentação oficial](https://github.com/raspberrypi/pico-sdk).
+- Instale o **CMake**, **Make** e um compilador **C/C++** compatível (como **GCC para ARM**).
+- Se ainda não tiver, instale o **VS Code** com as extensões recomendadas para desenvolvimento com o Pico e o Wokwi.
+
+** 2️⃣ Clone este repositório**
+
+```bash
+git clone https://github.com/seu-usuario/projeto-temporizadores-pico.git
+cd projeto-temporizadores-pico
+```
+
+**3️⃣ Configure o ambiente**
+
+Certifique-se de que o caminho do Pico SDK está definido corretamente:
+```bash
+export PICO_SDK_PATH=~/pico-sdk
+```
+No Windows, pode ser necessário configurar isso no CMake GUI ou no terminal do Git Bash.
+
+**4️⃣ Compile o código**
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+**5️⃣ Carregue o código no Raspberry Pi Pico W**
+1. Conecte o Pico W ao seu computador segurando o botão BOOTSEL e soltando após conectar.
+2. Copie o arquivo .uf2 gerado na pasta build para a unidade do Pico.
+3. O microcontrolador será reiniciado automaticamente.
+
 
 ## 📢 Observações
 - Consulte os materiais associados a cada atividade nos links disponíveis abaixo:
@@ -110,5 +123,5 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 2. https://www.dropbox.com/scl/fi/7faa7ib6bjrxncr2dxnf7/2025-01-26-14-01-54.mkv?rlkey=wqvef7zpxpuwvz2joj6qucasd&dl=0
    
 
-##🛠️ **Bons estudos e boa programação! 🚀**
+##🛠️ Bons estudos e boa programação! 🚀
 
