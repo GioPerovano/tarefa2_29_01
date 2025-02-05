@@ -77,6 +77,9 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 2. **Clone este repositório:**
    ```bash
    git clone https://github.com/seu-usuario/projeto-temporizadores-pico.git
+   ```
+3. **Entre na pasta do projeto:**
+   ```bash
    cd projeto-temporizadores-pico
    ```
 3. **Compile o código utilizando o Pico SDK:**
