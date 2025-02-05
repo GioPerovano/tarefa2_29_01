@@ -40,7 +40,7 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 - 💡 **LEDs**: Azul, Vermelho e Verde
 - ⚡ **Resistores**: 3x de 330 Ω
 - 🔘 **Botão (Pushbutton)**
-- 🛠️ Simulador Wokwi: 
+- 🛠️ Simulador Wokwi: https://wokwi.com/projects/422013525719079937
 
 ### 📌 Requisitos
 ✔️ **Ao pressionar o botão**, todos os LEDs acendem e começam a desligar um a um, com atraso de **3 segundos** entre as transições.
@@ -60,13 +60,15 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 
 ### 📂 Estrutura do Repositório
 ```plaintext
-📦 Projeto-Temporizadores-Pico
- ┣ 📂 src             # Código-fonte do projeto
- ┣ 📂 docs            # Documentação e fluxogramas
- ┣ 📜 README.md       # Instruções de uso (este arquivo)
- ┣ 📜 main.c          # Código principal
- ┣ 📜 CMakeLists.txt  # Configuração do projeto
- ┗ 📜 .gitignore      # Arquivos ignorados pelo Git
+📦 Atividades
+ ┣ 📂 Atividade 1
+ ┣  ┣ 📜 main.c                # Código da Atividade 1
+ ┣  ┣ 📜 diagram.json          # Diagrama do Wokwi da atividade 1
+ ┣ 📂 Atividade 2              
+ ┣  ┣ 📜 main.c                # Código-fonte do projeto
+ ┣  ┣ 📜 diagram.json          # Código-fonte do projeto
+ ┣ 📜 CMakeLists.txt           # Configuração do projeto
+ ┣ 📜 README.md                # Instruções de uso (este arquivo)
 ```
 
 ---
