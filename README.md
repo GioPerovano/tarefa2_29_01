@@ -49,9 +49,13 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 
 ### 📌 Requisitos
 ✔️ **Ao pressionar o botão**, todos os LEDs acendem e começam a desligar um a um, com atraso de **3 segundos** entre as transições.
+
 ✔️ A lógica de controle dos LEDs deve ser implementada em **funções de callback** do temporizador (`turn_off_callback()`).
+
 ✔️ O botão **só pode ser acionado novamente após o desligamento do último LED**.
+
 ✔️ Utilizar a ferramenta **BitDogLab** para testar o código com **LED RGB nos GPIOs 11, 12 e 13 e o botão A no GPIO 05**.
+
 ✔️ **(Opcional)** Implementar um software **debounce** para o botão.
 
 ---
@@ -66,12 +70,12 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 ### 📂 Estrutura do Repositório
 ```plaintext
 📦 Atividades
- ┣ 📂 Atividade 1
- ┣  ┣ 📜 main.c                # Código da Atividade 1
- ┣  ┣ 📜 diagram.json          # Diagrama do Wokwi da atividade 1
- ┣ 📂 Atividade 2              
- ┣  ┣ 📜 main.c                # Código-fonte do projeto
- ┣  ┣ 📜 diagram.json          # Código-fonte do projeto
+ ┣ 📂 Atividade 1              # Pasta com os arquivos da Atividade 1 (Semáforo)
+ ┣  ┣ 📜 main.c                # Código da Atividade 1 (Semáforo)
+ ┣  ┣ 📜 diagram.json          # Diagrama do Wokwi da Atividade 1 (Semáforo)
+ ┣ 📂 Atividade 2              # Pasta com os arquivos da Atividade 2 (One Shot)
+ ┣  ┣ 📜 main.c                # Código da Atividade 2 (One Shot)
+ ┣  ┣ 📜 diagram.json          # Diagrama do Wokwi da Atividade 2 (One Shot)
  ┣ 📜 CMakeLists.txt           # Configuração do projeto
  ┣ 📜 README.md                # Instruções de uso (este arquivo)
 ```
@@ -104,6 +108,7 @@ Criar um sistema de **temporização acionado por um botão** utilizando a funç
 - Consulte os materiais associados a cada atividade nos links disponíveis abaixo:
 1. https://www.dropbox.com/scl/fi/6w37qxzdq4ytljqvqzr6h/2025-01-25-17-48-11.mkv?rlkey=yjj1iqcfkx444xigglaxqw81e&dl=0
 2. https://www.dropbox.com/scl/fi/7faa7ib6bjrxncr2dxnf7/2025-01-26-14-01-54.mkv?rlkey=wqvef7zpxpuwvz2joj6qucasd&dl=0
+   
 
-🛠️ **Bons estudos e boa programação! 🚀**
+##🛠️ **Bons estudos e boa programação! 🚀**
 
