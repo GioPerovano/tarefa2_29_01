@@ -23,10 +23,15 @@ Criar um **semáforo** que altera os sinais de trânsito a cada **3 segundos** u
 
 ### 📌 Requisitos
 ✔️ O semáforo inicia no **vermelho**, alternando para **amarelo** e depois **verde**.
+
 ✔️ Cada alteração de estado ocorre a cada **3 segundos (3.000ms)**.
+
 ✔️ A mudança de estado dos LEDs ocorre dentro da **função de callback** do temporizador (`repeating_timer_callback()`).
+
 ✔️ No loop principal (`while`), uma mensagem deve ser impressa a cada **1 segundo (1.000ms)**.
+
 ✔️ Utilizar a ferramenta **BitDogLab** para testar o código com **LED RGB nos GPIOs 11, 12 e 13**.
+
 
 ---
 
