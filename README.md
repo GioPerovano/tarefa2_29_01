@@ -19,7 +19,7 @@ Criar um **semáforo** que altera os sinais de trânsito a cada **3 segundos** u
 - 🖥️ **Microcontrolador**: Raspberry Pi Pico W
 - 💡 **LEDs**: Vermelho, Amarelo e Verde
 - ⚡ **Resistores**: 3x de 330 Ω
-- 🛠️ Simulador Wokwi:
+- 🛠️ Simulador Wokwi: https://wokwi.com/projects/422014972283512833
 
 ### 📌 Requisitos
 ✔️ O semáforo inicia no **vermelho**, alternando para **amarelo** e depois **verde**.
